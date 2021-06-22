@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONTAINER_NAME="pytorch"
+CONTAINER_NAME="pifu_docker"
 CONTAINER_CMD=""
 DOCKER_ENV=""
 
@@ -159,6 +159,7 @@ printf "\033[00m\n"
 
 docker run \
   --rm -it \
+  -u root　\
   --gpus all \
   --privileged \
   --name ${CONTAINER_NAME} \

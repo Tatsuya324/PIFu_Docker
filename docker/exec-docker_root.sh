@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONTAINER_NAME="PIFu_Docker"
+CONTAINER_NAME="pifu_docker"
 CONTAINER_ID=""
 
 PROG_NAME=$(basename $0)

@@ -18,14 +18,12 @@ RUN mkdir -p /home/pytorch
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         sudo \
-        gosu \
         build-essential \
         pkg-config \
+        wget \
         git \
         curl \
         less \
-        emacs \
-        vim \
         nano \
         tmux \
         bash-completion \
@@ -65,45 +63,20 @@ RUN echo "PYTHONIOENCODING=utf-8" >> /root/.bashrc && \
 
 RUN pip3 install \
         setuptools \
-        Cython \
         wheel --verbose
+
 RUN pip3 install \
-        numpy --verbose
-RUN HDF5_DIR=/usr/lib/aarch64-linux-gnu/hdf5/serial/ \
-    pip3 install \
-        h5py==2.9.0 --verbose
-RUN pip3 install \
-        future==0.17.1 \
-        mock==3.0.5 \
-        gast==0.2.2 \
-        futures \
-        protobuf \
-        pybind11 --verbose
-RUN pip3 install \
-        six \
-        cycler \
-        kiwisolver \
-        pyparsing \
-        python-dateutil \
-        scikit-image==0.16.2 --verbose
-RUN pip3 install --no-dependencies \
-        matplotlib --verbose \
-        seaborn --verbose \
-        pandas --verbose
-RUN pip3 install \
-        scikit-learn --verbose \
-        pyyaml --verbose
-RUN pip3 install \
-        tensorboard --verbose \
-        torchsummary --verbose
-RUN pip3 install \
-        opencv-contrib-python==4.4.0.46 --verbose \
-        OpenEXR
-RUN pip3 install \
-        visdom --verbose \
-        dominate
+        --no-cache-dir numpy cython \
+        --no-cache-dir https://github.com/scopatz/pyembree/releases/download/0.1.6/pyembree-0.1.6.tar.gz
+
 RUN pip3 install \
         Pillow --verbose \
         scikit-image --verbose \
-        tqdm --verbose
+        tqdm --verbose \
+        numpy --verbose \
+        opencv-contrib-python==4.4.0.46 --verbose \
+        trimesh --verbose \
+        pyexr --verbose \
+        PyOpenGL --verbose \
+        PyOpenGL_accelerate --verbose \
 WORKDIR /home/pytorch

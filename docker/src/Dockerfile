@@ -66,7 +66,7 @@ RUN pip3 install \
         wheel --verbose
 
 RUN pip3 install \
-        --no-cache-dir numpy cython \
+        --no-cache-dir --user cython \
         --no-cache-dir https://github.com/scopatz/pyembree/releases/download/0.1.6/pyembree-0.1.6.tar.gz
 
 RUN pip3 install \

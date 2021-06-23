@@ -15,12 +15,13 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN mkdir -p /home/pytorch
 
+RUN apt install wget
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         sudo \
         build-essential \
         pkg-config \
-        wget \
         git \
         curl \
         less \

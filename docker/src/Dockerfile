@@ -13,7 +13,7 @@ SHELL ["/bin/bash", "-c"]
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN mkdir -p /home/pytorch 
+RUN mkdir -p /home/pifu_docker 
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -79,4 +79,4 @@ RUN pip3 install \
         pyexr --verbose \
         PyOpenGL --verbose \
         PyOpenGL_accelerate --verbose \
-WORKDIR /home/pytorch
+WORKDIR /home/pifu_docker

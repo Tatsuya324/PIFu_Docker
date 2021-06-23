@@ -66,6 +66,12 @@ RUN pip3 install \
         Cython \
         wheel --verbose
 
+RUN wget https://github.com/embree/embree/releases/download/v2.17.7/embree-2.17.7.x86_64.linux.tar.gz -O /tmp/embree.tar.gz -nv
+
+RUN tar -xzf /tmp/embree.tar.gz --strip-components=1 -C /usr/local
+
+RUN rm -rf /tmp/embree.tar.gz
+
 RUN pip3 install \
         --no-cache-dir https://github.com/scopatz/pyembree/releases/download/0.1.6/pyembree-0.1.6.tar.gz
 

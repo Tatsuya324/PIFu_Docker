@@ -84,5 +84,6 @@ RUN pip3 install \
         trimesh --verbose \
         pyexr --verbose \
         PyOpenGL --verbose \
-        PyOpenGL_accelerate --verbose \
+        PyOpenGL_accelerate --verbose
+
 WORKDIR /home/pytorch

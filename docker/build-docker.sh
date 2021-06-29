@@ -115,7 +115,7 @@ if [ "$FLG_OPENCV_VERSION" = "TRUE" ]; then
   fi
 fi
 
-PYTORCH_IMAGE_NAME="pifu_docker:${PYTORCH_VERSION}-cuda${CUDA_VERSION}-cudnn${CUDNN_VERSION}-${IMAGE_FLAVOR}-opencv${OPENCV_VERSION}"
+PYTORCH_IMAGE_NAME="pifu_docker:pifu${PYTORCH_VERSION}-cuda${CUDA_VERSION}-cudnn${CUDNN_VERSION}-${IMAGE_FLAVOR}-opencv${OPENCV_VERSION}"
 
 docker build \
   -t ${PYTORCH_IMAGE_NAME} \

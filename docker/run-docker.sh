@@ -119,7 +119,7 @@ if [ "$FLG_OPENCV_VERSION" = "TRUE" ]; then
   fi
 fi
 
-PYTORCH_IMAGE_NAME="pytorch:${PYTORCH_VERSION}-cuda${CUDA_VERSION}-cudnn${CUDNN_VERSION}-${IMAGE_FLAVOR}-opencv${OPENCV_VERSION}"
+PYTORCH_IMAGE_NAME="pifu_docker:pifu${PYTORCH_VERSION}-cuda${CUDA_VERSION}-cudnn${CUDNN_VERSION}-${IMAGE_FLAVOR}-opencv${OPENCV_VERSION}"
 
 IMAGE_LS=$(docker image ls ${PYTORCH_IMAGE_NAME})
 
@@ -148,18 +148,23 @@ clear
 
 printf "\033[01;31m\n"
 printf " ________          ________                      ______ \n";
+printf "\033[01;32m"
 printf " ___  __ \_____  _____  __/______ __________________  /_ \n";
+printf "\033[01;33m"
 printf " __  /_/ /__  / / /__  /   _  __ \__  ___/_  ___/__  __ \ \n";
+printf "\033[01;34m"
 printf " _  ____/ _  /_/ / _  /    / /_/ /_  /    / /__  _  / / / \n";
+printf "\033[01;35m"
 printf " /_/      _\__, /  /_/     \____/ /_/     \___/  /_/ /_/ \n";
+printf "\033[01;36m"
 printf "          /____/ ";
 printf "\n"
 printf "\n"
 printf "\033[00m\n"
 
 docker run \
-  --rm -it \
-  -u root　\
+  --rm -it\
+  -u root\
   --gpus all \
   --privileged \
   --name ${CONTAINER_NAME} \

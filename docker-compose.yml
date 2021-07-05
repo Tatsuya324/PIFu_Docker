@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  DataGeneration:
+    build: ./docker/DataGeneration
+    volumes:
+      - ./shared_dir:/home/pufu
+    tty: true
+    stdin_open: true
+    command: /bin/sh
+
+  Training:
+    build: ./docker/Training
+    volumes:
+      - ./shared_dir:/home/pufu
+    tty: true
+    stdin_open: true
+    command: /bin/sh

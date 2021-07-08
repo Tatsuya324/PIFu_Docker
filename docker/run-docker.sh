@@ -40,11 +40,11 @@ printf "\033[01;31m"
 printf " ■       ■    ■      ■   ■        ■   ■■  ■   ■  ■     ■   ■  ■      ■■\n";
 printf "\033[01;32m"
 printf "■■■     ■■■  ■■■      ■■ ■■      ■■■■■     ■■■    ■■■  ■■  ■■  ■■■   ■■\n";
-printf "\n"
 printf "\033[00m\n"
-
+echo "xhost"
 xhost +local:
 
+printf "\n"
 docker run --rm -it \
   -u root\
   --gpus all \

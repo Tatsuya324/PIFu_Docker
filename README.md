@@ -1,18 +1,17 @@
-# PIFu_Docker
-[PIFu: Pixel-Aligned Implicit Function for High-Resolution Clothed Human Digitization](https://github.com/shunsukesaito/PIFu)を動作させるためのDockerです。
-研究目的で試験的に作成したものですので、動作は保証しません。
-自己責任でご利用ください。
+# PyTorch_Docker
+
+## 🀇🀏🀐🀘🀙🀡🀀🀁🀂🀃🀆🀅🀄🀄
 
 ## セットアップ
 
 ### 1. 新たにターミナルを立ち上げて次のコマンドでこのリポジトリをクローン（ダウンロード）してください
 ```sh
-git clone https://github.com/TatsuyaOkazaki324/PIFu_Docker.git
+git clone http://git-docker.tasakilab:5050/git/urasaki/PyTorch_Docker.git
 ```
 
 ### 2. 次のコマンドでDockerイメージをビルドしてください（時間がかかります）
 ```sh
-./PIFu_Docker/docker/build-docker.sh
+./PyTorch_Docker/docker/build-docker.sh
 ```
 
 |オプション |パラメータ |説明                      |既定値   |
@@ -25,20 +24,11 @@ git clone https://github.com/TatsuyaOkazaki324/PIFu_Docker.git
 
 ### 3. ビルドに成功したら次のコマンドでDockerコンテナを起動することができます
 ```sh
-./PIFu_Docker/docker/run-docker.sh
+./PyTorch_Docker/docker/run-docker.sh
 ```
 **エラーが出た場合はイメージを削除しPyTorchのバージョンを下げてもう一度 2. を実行してみてください**
 
 ### 4. 次のコマンドで別のターミナルから起動中のコンテナに入ることができます
 ```sh
-./PIFu_Docker/docker/exec-docker.sh
-```
-
-## PIFuのClone
-```sh
-./PIFu_Docker/docker/run-docker.sh
-```
-コンテナを起動後に次のコマンドを実行します。
-```sh
-git clone https://github.com/shunsukesaito/PIFu.git
+./PyTorch_Docker/docker/exec-docker.sh
 ```

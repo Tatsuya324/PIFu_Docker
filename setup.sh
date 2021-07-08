@@ -7,7 +7,7 @@ if [ -e ${CLONE_DIR}/shared_dir ]; then
     echo "Dockerイメージが存在する可能性があるため、BUILDを行いません。"
 else
     echo "PIFuリポジトリが見つかりません。GitHubよりCloneします。"
-    git clone https://github.com/shunsukesaito/PIFu.git ${CLONE_DIR}/shared_dir
+    git clone https://github.com/shunsukesaito/PIFu.git .${CLONE_DIR}/shared_dir/PIFu
     echo "DockerイメージのBUILDを行います。"
-    ${CLONE_DIR}/docker/build-docker.sh
+    .${CLONE_DIR}/docker/build-docker.sh
 fi

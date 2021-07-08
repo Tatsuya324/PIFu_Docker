@@ -1,4 +1,5 @@
-FROM pytorch/pytorch:1.4-cuda10.1-cudnn7-devel
+# FROM pytorch/pytorch:1.4-cuda10.1-cudnn7-devel
+FROM nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04
 
 RUN sed -i 's@archive.ubuntu.com@ftp.jaist.ac.jp/pub/Linux@g' /etc/apt/sources.list
 
@@ -28,9 +29,13 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN wget https://github.com/embree/embree/releases/download/v2.17.7/embree-2.17.7.x86_64.linux.tar.gz -O /tmp/embree.tar.gz -nv
-RUN tar -xzf /tmp/embree.tar.gz --strip-components=1 -C /usr/local
-RUN rm -rf /tmp/embree.tar.gz
+RUN pip3 install \
+    torch==1.4.0 \
+    torchvision==0.5.0 -f https://download.pytorch.org/whl/cu101/torch_stable.html
+
+RUN wget https://github.com/embree/embree/releases/download/v2.17.7/embree-2.17.7.x86_64.linux.tar.gz -O /tmp/embree.tar.gz -nv && \
+    tar -xzf /tmp/embree.tar.gz --strip-components=1 -C /usr/local && \
+    rm -rf /tmp/embree.tar.gz
 
 RUN pip3 install --no-cache-dir \
     Pillow \

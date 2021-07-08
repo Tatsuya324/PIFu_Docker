@@ -22,23 +22,23 @@ DOCKER_ENV="${DOCKER_ENV} -e QT_X11_NO_MITSHM=1"
 clear
 
 printf "                                                       ■\n";
-printf "\031[00m"
+printf "\033[01;31m\n"
 printf "■■■■■   ■■■  ■■■■■■              ■■■■■                 ■\n";
-printf "\032[00m"
+printf "\033[01;32m\n"
 printf " ■   ■   ■    ■   ■               ■   ■■               ■\n";
-printf "\033[00m"
+printf "\033[01;33m\n"
 printf " ■   ■   ■    ■      ■   ■        ■    ■   ■■■    ■■■  ■  ■■   ■■■   ■ ■■\n";
-printf "\034[00m"
+printf "\033[01;34m\n"
 printf " ■   ■   ■    ■  ■   ■   ■        ■    ■  ■   ■  ■   ■ ■  ■   ■   ■  ■■\n";
-printf "\035[00m"
+printf "\033[01;35m\n"
 printf " ■  ■■   ■    ■■■■   ■   ■        ■    ■■ ■   ■  ■     ■ ■    ■   ■   ■\n";
-printf "\036[00m"
+printf "\033[01;36m\n"
 printf " ■■      ■    ■  ■   ■   ■   ■■   ■    ■  ■   ■■ ■     ■■■■   ■■■■    ■\n";
-printf "\037[00m"
+printf "\033[01;37m\n"
 printf " ■       ■    ■      ■   ■        ■    ■  ■   ■  ■     ■■ ■   ■       ■\n";
-printf "\038[00m"
+printf "\033[01;38m\n"
 printf " ■       ■    ■      ■   ■        ■   ■■  ■   ■  ■     ■   ■  ■      ■■\n";
-printf "\039[00m"
+printf "\033[01;39m\n"
 printf "■■■     ■■■  ■■■      ■■ ■■      ■■■■■     ■■■    ■■■  ■■  ■■  ■■■   ■■\n";
 printf "\n"
 printf "\n"

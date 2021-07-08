@@ -1,11 +1,7 @@
 #!/bin/bash
 
-CONTAINER_CMD="python3 -m PIFu.apps.prt_util -i ./raw_data && python3 -m apps.render_data -i ./raw_data -o ./train_data -e
-"
-
-
-CONTAINER_NAME="pifu_docker"
-DOCKER_IMAGE="pifu_docker:DataGeneration"
+CONTAINER_NAME="pifu_docker_DataGeneration"
+DOCKER_IMAGE="pifu_docker_DataGeneration:nvidia/cuda11.4.0-runtime-ubuntu20.04"
 
 HOST_WS=$(dirname $(dirname $(readlink -f $0)))/shared_dir
 
@@ -24,4 +20,4 @@ docker run --rm \
   ${DOCKER_ENV} \
   ${DOCKER_VOLUME} \
   ${DOCKER_IMAGE} \
-  ${CONTAINER_CMD}
+  /bin/bash -c "cd PIFu && python3 -m apps.prt_util -i ../raw_data && python3 -m apps.render_data -i ../raw_data -o ../train_data -e"

@@ -1,11 +1,7 @@
 #!/bin/bash
 
-CONTAINER_CMD="python -m PIFu.apps.train_shape --dataroot ./train_data --random_flip --random_scale --random_trans
-"
-
-
-CONTAINER_NAME="pifu_docker"
-DOCKER_IMAGE="pifu_docker:Training"
+CONTAINER_NAME="pifu_docker_Training"
+DOCKER_IMAGE="pifu_docker_Training:pytorch/pytorch1.4-cuda10.1-cudnn7-runtime"
 
 HOST_WS=$(dirname $(dirname $(readlink -f $0)))/shared_dir
 
@@ -24,5 +20,4 @@ docker run --rm \
   ${DOCKER_ENV} \
   ${DOCKER_VOLUME} \
   ${DOCKER_IMAGE} \
-  ${CONTAINER_CMD}
-  
+  /bin/bash -c "cd PIFu && python -m apps.train_shape --dataroot ../train_data --random_flip --random_scale --random_trans"

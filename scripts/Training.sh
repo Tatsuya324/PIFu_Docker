@@ -1,7 +1,7 @@
 #!/bin/bash
 
-CONTAINER_NAME="pifu_docker_Training"
-DOCKER_IMAGE="pifu_docker_Training:pytorch/pytorch1.4-cuda10.1-cudnn7-runtime"
+CONTAINER_NAME="pifu_docker_training"
+DOCKER_IMAGE="pifu_docker_training:pytorch-pytorch1.4-cuda10.1-cudnn7-runtime"
 
 HOST_WS=$(dirname $(dirname $(readlink -f $0)))/shared_dir
 

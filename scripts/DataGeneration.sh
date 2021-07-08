@@ -1,7 +1,7 @@
 #!/bin/bash
 
-CONTAINER_NAME="pifu_docker_DataGeneration"
-DOCKER_IMAGE="pifu_docker_DataGeneration:nvidia/cuda11.4.0-runtime-ubuntu20.04"
+CONTAINER_NAME="pifu_docker_datageneration"
+DOCKER_IMAGE="pifu_docker_datageneration:nvidia-cuda11.4.0-runtime-ubuntu20.04"
 
 HOST_WS=$(dirname $(dirname $(readlink -f $0)))/shared_dir
 

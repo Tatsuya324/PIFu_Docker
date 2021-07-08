@@ -59,10 +59,5 @@ RUN wget https://github.com/embree/embree/releases/download/v2.17.7/embree-2.17.
     tar -xzf /tmp/embree.tar.gz --strip-components=1 -C /usr/local && \
     rm -rf /tmp/embree.tar.gz && \
     pip install --no-cache-dir https://github.com/scopatz/pyembree/releases/download/0.1.6/pyembree-0.1.6.tar.gz
-
-
-RUN echo "PYTHONIOENCODING=utf-8" >> /root/.bashrc && \
-    echo "TF_CPP_MIN_LOG_LEVEL=2" >> /root/.bashrc && \
-    echo "export PS1='\[\033[01;32m\]PIFu@docker\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> /root/.bashrc
         
 WORKDIR /home/pifu-docker

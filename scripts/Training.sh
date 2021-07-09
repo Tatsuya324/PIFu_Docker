@@ -10,9 +10,8 @@ DOCKER_VOLUME="${DOCKER_VOLUME} -v /etc/group:/etc/group:ro"
 DOCKER_VOLUME="${DOCKER_VOLUME} -v /etc/passwd:/etc/passwd:ro"
 
 DOCKER_ENV="${DOCKER_ENV} -e HOME=/home/pifu-docker"
-DOCKER_ENV="-e USER_ID=$(id -u)"
 
-docker run --rm \
+docker run --rm -it\
   --gpus all \
   --privileged \
   --name ${CONTAINER_NAME} \

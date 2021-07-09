@@ -3,7 +3,11 @@
 CONTAINER_NAME="pifu_docker_training"
 DOCKER_IMAGE="pifu_docker_training:pytorch-pytorch1.4-cuda10.1-cudnn7-runtime"
 
-HOST_WS=$(dirname $(dirname $(readlink -f $0)))/shared_dir
+if [ $1 ]; then
+  HOST_WS=$1
+else
+  HOST_WS=$(dirname $(dirname $(readlink -f $0)))/shared_dir
+fi
 
 DOCKER_VOLUME="${DOCKER_VOLUME} -v ${HOST_WS}:/home/pifu-docker:rw"
 DOCKER_VOLUME="${DOCKER_VOLUME} -v /etc/group:/etc/group:ro"

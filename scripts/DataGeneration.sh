@@ -3,7 +3,11 @@
 CONTAINER_NAME="pifu_docker_datageneration"
 DOCKER_IMAGE="pifu_docker_datageneration:nvidia-cuda11.4.0-runtime-ubuntu20.04"
 
-HOST_WS=$(dirname $(dirname $(readlink -f $0)))/shared_dir
+if [ $1 ]; then
+  HOST_WS=$1
+else
+  HOST_WS=$(dirname $(dirname $(readlink -f $0)))/shared_dir
+fi
 
 DOCKER_VOLUME="${DOCKER_VOLUME} -v ${HOST_WS}:/home/pifu-docker:rw"
 DOCKER_VOLUME="${DOCKER_VOLUME} -v /etc/group:/etc/group:ro"

@@ -24,3 +24,5 @@ docker run --rm -it\
   ${DOCKER_VOLUME} \
   ${DOCKER_IMAGE} \
   /bin/bash -c "cd PIFu && python -m apps.train_shape --dataroot ../train_data --random_flip --random_scale --random_trans"
+
+echo "PIFu/checkpointsに学習モデルを保存しました。"

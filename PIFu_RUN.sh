@@ -24,7 +24,7 @@ case $ANS in
     ;;
 esac
 
-echo "Trainingを行いますか？[Y/n]:"
+echo "ShapeのTrainingを行いますか？[Y/n]:"
 read ANS
 
 case $ANS in
@@ -33,7 +33,31 @@ case $ANS in
     if [ -e ${PIFuRUN_DIR}/shared_dir/train_data/GEO ]; then
         echo "Training用のデータを確認しました。"
         echo "Trainingを開始します。"
-        . ${PIFuRUN_DIR}/scripts/Training.sh ${PIFuRUN_DIR}/shared_dir
+        . ${PIFuRUN_DIR}/scripts/Training_Shape.sh ${PIFuRUN_DIR}/shared_dir
+        echo "Trainingが終了しました。"
+    else
+        echo "Training用のデータが見つかりませんでした。"
+        echo ".${PIFuRUN_DIR}/scripts/DataGeneration.sh を実行してTrainingDataを作成してください。"
+        echo "処理を終了します。"
+    fi
+    ;;
+  * )
+    # ここに「No」の時の処理を書く
+    echo "No"
+    ;;
+esac
+
+
+echo "ColorのTrainingを行いますか？[Y/n]:"
+read ANS
+
+case $ANS in
+  "" | [Yy]* )
+    # ここに「Yes」の時の処理を書く
+    if [ -e ${PIFuRUN_DIR}/shared_dir/train_data/GEO ]; then
+        echo "Training用のデータを確認しました。"
+        echo "Trainingを開始します。"
+        . ${PIFuRUN_DIR}/scripts/Training_Color.sh ${PIFuRUN_DIR}/shared_dir
         echo "Trainingが終了しました。"
     else
         echo "Training用のデータが見つかりませんでした。"

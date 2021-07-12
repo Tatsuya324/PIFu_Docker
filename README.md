@@ -1,5 +1,8 @@
 # PIFu_Docker
 
+このリポジトリは[PIFu: Pixel-Aligned Implicit Function for High-Resolution Clothed Human Digitization](https://github.com/shunsukesaito/PIFu)を動作ささせるために作成したDocker環境です。
+研究目的で個人的に作成したため、利用は自己責任でお願いします。
+
 ## セットアップ
 
 ### 1. 新たにターミナルを立ち上げて次のコマンドでこのリポジトリをクローン（ダウンロード）してください
